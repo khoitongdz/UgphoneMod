@@ -16,38 +16,19 @@
       background-image: url('background.jpg');
       background-size: cover;
       background-position: center;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
       color: white;
       font-family: 'Segoe UI', sans-serif;
     }
 
-    .dark-mode-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: background 0.3s;
-    }
-
-    .dark-mode-toggle:hover {
-      background: rgba(0, 0, 0, 0.3);
-    }
-
     .container-wrapper {
       width: 100%;
-      overflow-x: auto;
+      overflow-x: auto; /* Kích hoạt thanh cuộn ngang */
       white-space: nowrap;
+      padding: 10px 0;
     }
 
     .container {
@@ -55,10 +36,10 @@
       gap: 20px;
       padding: 20px;
       scroll-behavior: smooth;
-      max-width: 100%;
     }
+
     .container-wrapper::-webkit-scrollbar {
-      height: 8px; 
+      height: 8px;
     }
 
     .container-wrapper::-webkit-scrollbar-thumb {
@@ -74,15 +55,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
       background: rgba(255, 255, 255, 0.1);
       padding: 15px;
       border-radius: 10px;
       min-width: 150px;
+      text-align: center;
+      cursor: pointer;
       transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
       box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-      cursor: pointer;
-      text-align: center;
     }
 
     .game-box:hover {
@@ -103,7 +83,6 @@
     }
 
     .play-button {
-      position: relative;
       background: linear-gradient(45deg, white, cyan);
       color: black;
       padding: 10px 20px;
@@ -111,8 +90,6 @@
       border-radius: 5px;
       font-size: 16px;
       cursor: pointer;
-      overflow: hidden;
-      z-index: 0;
     }
 
     .play-button:hover {
@@ -120,35 +97,22 @@
       color: white;
     }
 
-    body.light-mode {
-      background: white;
-      color: black;
-    }
-
-    body.light-mode .game-box {
-      background: rgba(0, 0, 0, 0.1);
-    }
-
-    body.light-mode .game-box:hover {
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    body.light-mode .play-button {
-      background: linear-gradient(45deg, red, orange);
-      color: white;
-    }
-
-    body.light-mode .play-button:hover {
-      background: linear-gradient(45deg, darkred, darkorange);
+    .time-display {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-<div class="web-credit">
-   Phiên bản 1.2.1 | Server Discord: 
-    <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: snow white; text-decoration: none;">Join</a>
-</div> 
+  <div class="web-credit">
+    Phiên bản 1.2.1 | Server Discord: 
+    <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: blue; text-decoration: none;">Join</a>
+  </div> 
+
+  <!-- Gói danh sách thiết bị-->
+    <div class="container-wrapper">
     <div class="container">
     <div class="game-box">
         <div class="game-title">Device 1</div>
@@ -210,7 +174,8 @@
         <button class="play-button" onclick="window.location.href='https://khoitongdz.github.io/Executor.xyz/'">Xem</button>
     </div>
 </div>
-    <div class="time-display" id="timeDisplay">Loading...</div>
+  
+  <div class="time-display" id="timeDisplay">Loading...</div>
     
 <script>
         function updateTime() {
