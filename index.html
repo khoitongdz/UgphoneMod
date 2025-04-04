@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>📱𝐔𝐠𝐩𝐡𝐨𝐧𝐞𝐦𝐨𝐝-𝐤𝐡𝐨𝐢𝐭𝐨𝐧𝐠𝐝𝐳📱</title>
+  <title>📱𝐔𝐠𝐩𝐡𝐨𝐧𝐞𝐦𝐨𝐝 - 𝐤𝐡𝐨𝐢𝐭𝐨𝐧𝐠𝐝𝐳📱</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('background.jpg'); 
-      background-size: cover; 
+      background-image: url('background.jpg');
+      background-size: cover;
       background-position: center;
       overflow: hidden;
       display: flex;
@@ -18,7 +22,8 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      color: white; 
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     .dark-mode-toggle {
@@ -26,12 +31,13 @@
       top: 10px;
       right: 10px;
       padding: 10px;
-      background: rgba(0, 0, 0, 0.5); 
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       border: none;
       border-radius: 10px;
       cursor: pointer;
       backdrop-filter: blur(10px);
+      transition: background 0.3s;
     }
 
     .dark-mode-toggle:hover {
@@ -51,9 +57,10 @@
     .container::-webkit-scrollbar {
       display: none;
     }
+
     .container {
-      -ms-overflow-style: none;  
-      scrollbar-width: none;    
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     .time-display {
@@ -64,7 +71,23 @@
       background: rgba(0, 0, 0, 0.5);
       border-radius: 10px;
       backdrop-filter: blur(10px);
-      font-size: 16px;        
+      font-size: 16px;
+    }
+
+    .web-credit {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .web-credit a {
+      color: white;
+      text-decoration: underline;
     }
 
     .game-box {
@@ -75,11 +98,11 @@
       background: rgba(255, 255, 255, 0.1);
       padding: 15px;
       border-radius: 10px;
-      text-align: center;
       min-width: 150px;
-      transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
       box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
       cursor: pointer;
+      text-align: center;
     }
 
     .game-box:hover {
@@ -102,13 +125,14 @@
     .play-button {
       position: relative;
       background: linear-gradient(45deg, white, cyan);
-      color: white;
+      color: black;
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
       font-size: 16px;
       cursor: pointer;
       overflow: hidden;
+      z-index: 0;
     }
 
     .play-button::after {
@@ -122,45 +146,54 @@
       transform: translate(-50%, -50%) scale(0);
       border-radius: 50%;
       transition: transform 0.3s;
+      z-index: -1;
     }
 
     .play-button:hover {
       background: linear-gradient(45deg, darkblue, lightblue);
+      color: white;
     }
 
     .play-button:active::after {
       transform: translate(-50%, -50%) scale(1.5);
     }
 
-    .light-mode body {
+    /* Light Mode Styles */
+    body.light-mode {
       background: white;
       color: black;
     }
 
-    .light-mode .game-box {
+    body.light-mode .game-box {
       background: rgba(0, 0, 0, 0.1);
     }
 
-    .light-mode .game-box:hover {
+    body.light-mode .game-box:hover {
       background: rgba(0, 0, 0, 0.2);
     }
 
-    .light-mode .play-button {
+    body.light-mode .play-button {
       background: linear-gradient(45deg, red, orange);
+      color: white;
     }
 
-    .light-mode .play-button:hover {
+    body.light-mode .play-button:hover {
       background: linear-gradient(45deg, darkred, darkorange);
     }
 
-    .light-mode .dark-mode-toggle {
+    body.light-mode .dark-mode-toggle {
       background: black;
       color: white;
+    }
+
+    body.light-mode .web-credit a {
+      color: black;
     }
   </style>
 </head>
 <body>
-    
+  <button class="dark-mode-toggle" onclick="toggleMode()">🌗</button>
+  <div class="time-display" id="timeDisplay">Loading...</div>
 <div class="web-credit">
     Code:khoitongdz | Server Discord: 
     <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: snow white; text-decoration: none;">Join</a>
