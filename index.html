@@ -1,212 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📱𝐔𝐠𝐩𝐡𝐨𝐧𝐞𝐦𝐨𝐝-𝐤𝐡𝐨𝐢𝐭𝐨𝐧𝐠𝐝𝐳📱</title>
-    <style>
-           body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-image: url('background.jpg'); 
-            background-size: cover; 
-            background-position: center;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            color: white; 
-           }
-        }
-        .dark-mode-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.5); 
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-        }
-        .dark-mode-toggle:hover {
-            background: rgba(0, 0, 0, 0.3);
-        }
-        .container {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            overflow-x: auto;
-            white-space: nowrap;
-            scroll-behavior: smooth;
-            max-width: 90vw;
-       
-        }
-        .time-display {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            font-size: 16px;        
-        }
-        .game-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 150px;
-            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-        }
-        .game-box:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
-        }
-        .game-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .game-box:hover .game-image {
-            transform: scale(1.2);
-        }
-        .play-button {
-            position: relative;
-            background: linear-gradient(45deg, white, cyan);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            overflow: hidden;
-        }
-        .play-button::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            border-radius: 50%;
-            transition: transform 0.3s;
-        }
-        .play-button:hover {
-            background: linear-gradient(45deg, darkblue, lightblue);
-        }
-        .play-button:active::after {
-            transform: translate(-50%, -50%) scale(1.5);
-        }
-        .light-mode body {
-            background: white;
-            color: black;
-        }
-        .light-mode .game-box {
-            background: rgba(0, 0, 0, 0.1);
-        }
-        .light-mode .game-box:hover {
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .light-mode .play-button {
-            background: linear-gradient(45deg, red, orange);
-        }
-        .light-mode .play-button:hover {
-            background: linear-gradient(45deg, darkred, darkorange);
-        }
-        .light-mode .dark-mode-toggle {
-            background: black;
-            color: white;
-      }
-  .container::-webkit-scrollbar {
-    display: none;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📱𝐔𝐠𝐩𝐡𝐨𝐧𝐞𝐦𝐨𝐝-𝐤𝐡𝐨𝐢𝐭𝐨𝐧𝐠𝐝𝐳📱</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('background.jpg'); 
+      background-size: cover; 
+      background-position: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: white; 
+    }
 
-  .container {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;    
-  }
-</style>
+    .dark-mode-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5); 
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+
+    .dark-mode-toggle:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      max-width: 90vw;
+    }
+
+    .container::-webkit-scrollbar {
+      display: none;
+    }
+    .container {
+      -ms-overflow-style: none;  
+      scrollbar-width: none;    
+    }
+
+    .time-display {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      font-size: 16px;        
+    }
+
+    .game-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 150px;
+      transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+
+    .game-box:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .game-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .game-box:hover .game-image {
+      transform: scale(1.2);
+    }
+
+    .play-button {
+      position: relative;
+      background: linear-gradient(45deg, white, cyan);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .play-button::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .play-button:hover {
+      background: linear-gradient(45deg, darkblue, lightblue);
+    }
+
+    .play-button:active::after {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    .light-mode body {
+      background: white;
+      color: black;
+    }
+
+    .light-mode .game-box {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .light-mode .game-box:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .light-mode .play-button {
+      background: linear-gradient(45deg, red, orange);
+    }
+
+    .light-mode .play-button:hover {
+      background: linear-gradient(45deg, darkred, darkorange);
+    }
+
+    .light-mode .dark-mode-toggle {
+      background: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
     
 <div class="web-credit">
     Code:khoitongdz | Server Discord: 
     <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: snow white; text-decoration: none;">Join</a>
 </div> 
      <div class="container">
-        <div class="game-box">
-            <div class="game-title">Device 1</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 1" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUHBoXGgMCVgsXGgJWDx4YExUUFxQcAlYXEhYSDx4fVEpLTkpJVA8THlYMGhcQEhUcVh8eGh9WCA4JDRINFAkIVRMPFhc='">Play</button>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Device 2</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc='">Play</button>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Device 3</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFhocEhhWHBoWHlRDTEJNVBYaHBIYVhgTCRQVEhgXHlYSCB4QGhJWCQscVRMPFhc='">Play</button>
-        </div>
-          <div class="game-box">
-            <div class="game-title">Device 4</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFR4QEBJUQ0NNSlQIExofFAxWHRIcEw9WSFUTDxYX'">Play</button>
-        </div>
-         <div class="game-box">
-            <div class="game-title">Device 5</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUEQ4eHR4VHFYcGhYeCFRDQ0NDVAEUFhkSHhcaFR9WHxQUFggfGgJWCA4JDRINGhdVEw8WFw=='">Play</button>
-        </div>
-        </div>
-         <div class="game-box">
-            <div class="game-title">Device 6</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUDw4JGRQXEg8eVQMCAVQaCxJGLTMtAiIWQjYaIykX'">Play</button>
-        </div>
-        </div>
-         <div class="game-box">
-            <div class="game-title">Device 7</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUGQ4JCA8cGhYeVEJDQ0xUCBgaCRceD1YcEgkXCFUTDxYX'">Play</button>
-        </div>
-        </div>
-         <div class="game-box">
-            <div class="game-title">Device 7</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUGRoPDxceGBQSFVYcGhYeCFRDSUxLVBkaDw8XHlYZHhoJCFYTHgkUHghVEw8WFw=='">Play</button>
-        </div>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Device 8</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUAR4CFA5WHBoWHlRCSkJKVBAeCxceCVZJSktLVRMPFhc='">Play</button>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Device 9</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxQNFFYeFQ8eCQ8aEhUWHhUPVhMUFRxWEBQVHFYXEhYSDx4fVEpLSENJVBoVGBIeFQ9WCB4aF1YPEx5WHgMUCRgSCA9VEw8WFw=='">Play</button>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Script Blox Fruit & Executor</div>
-            <img src="https://media.discordapp.net/attachments/1321869620881129566/1353724109657473107/66713b1a-eaf2-4915-bf92-0abd1ddc2fd6.webp?ex=67ef3792&is=67ede612&hm=36e46dcd87b52b1fd2fdce6294a701d01bbb8bbb6d97dee180a6f6c01006aab2&=&format=webp&width=509&height=509" alt="Script" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://khoitongdz.github.io/Executor.xyz/'">Xem</button>
-       </div>
+    <div class="game-box">
+        <div class="game-title">Device 1</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 1">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...1'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Device 2</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 2">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...2'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Device 3</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 3">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...3'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Device 4</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 4">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...4'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Device 5</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 5">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...5'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Device 6</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 6">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...6'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Device 7</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 7">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...7a'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Device 8</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 8">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...8'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Device 9</div>
+        <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" class="game-image" alt="Device 9">
+        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=...9'">Play</button>
+    </div>
+
+    <div class="game-box">
+        <div class="game-title">Script Blox Fruit & Executor</div>
+        <img src="https://media.discordapp.net/attachments/1321869620881129566/1353724109657473107/66713b1a-eaf2-4915-bf92-0abd1ddc2fd6.webp?format=webp&width=509&height=509" class="game-image" alt="Script">
+        <button class="play-button" onclick="window.location.href='https://khoitongdz.github.io/Executor.xyz/'">Xem</button>
+    </div>
+</div>
     <div class="time-display" id="timeDisplay">Loading...</div>
     
 <script>
