@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>📱𝐔𝐠𝐩𝐡𝐨𝐧𝐞𝐦𝐨𝐝-𝐤𝐡𝐨𝐢𝐭𝐨𝐧𝐠𝐝𝐳📱</title>
   <style>
     * {
@@ -24,41 +24,37 @@
       position: relative;
       color: white;
       font-family: 'Segoe UI', sans-serif;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .time-display {
       position: absolute;
       top: 10px;
       right: 10px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
       background: rgba(0, 0, 0, 0.5);
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
-
-    .dark-mode-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: background 0.3s;
-    }
-
-    .dark-mode-toggle:hover {
-      background: rgba(0, 0, 0, 0.3);
+      padding: 6px 12px;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+      animation: fadeIn 2s ease-in;
     }
 
     .container-wrapper {
       width: 100%;
       overflow-x: auto;
       white-space: nowrap;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .container {
@@ -72,12 +68,10 @@
     .container-wrapper::-webkit-scrollbar {
       height: 8px;
     }
-
     .container-wrapper::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
       border-radius: 10px;
     }
-
     .container-wrapper::-webkit-scrollbar-track {
       background: rgba(0, 0, 0, 0.3);
     }
@@ -88,48 +82,74 @@
       align-items: center;
       gap: 10px;
       background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 10px;
-      min-width: 150px;
-      transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
-      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      min-width: 160px;
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
       cursor: pointer;
       text-align: center;
+      transition: all 0.4s ease;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
     .game-box:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+      box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.3);
     }
 
     .game-image {
       width: 80px;
       height: 80px;
       border-radius: 10px;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease-in-out;
     }
 
     .game-box:hover .game-image {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
 
     .play-button {
       position: relative;
-      background: linear-gradient(45deg, white, cyan);
+      background: linear-gradient(135deg, #ffffff, #00eaff);
       color: black;
       padding: 10px 20px;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       font-size: 16px;
       cursor: pointer;
       overflow: hidden;
       z-index: 0;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+    }
+
+    .play-button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: rgba(255,255,255,0.4);
+      transform: skewX(-25deg);
+      transition: 0.5s;
     }
 
     .play-button:hover {
-      background: linear-gradient(45deg, darkblue, lightblue);
       color: white;
+      background: linear-gradient(135deg, #007acc, #00eaff);
+      transform: translateY(-2px);
+    }
+
+    .play-button:hover::after {
+      left: 105%;
     }
   </style>
 </head>
