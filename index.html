@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <title>Ugphone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,6 +19,36 @@
       background-size: cover;
       background-position: center;
       overflow-x: hidden;
+      margin: 0;
+      padding-top: 40px;
+    }
+
+    .top-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: black;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    }
+
+    .nav-button {
+      background: none;
+      color: white;
+      font-size: 20px;
+      border: none;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .nav-button:hover {
+      transform: scale(1.2);
     }
 
     @keyframes fadeIn {
@@ -27,7 +58,7 @@
 
     .time-display {
       position: absolute;
-      top: 10px;
+      top: 50px;
       right: 10px;
       font-size: 16px;
       font-weight: bold;
@@ -146,9 +177,10 @@
     .play-button:hover::after {
       left: 100%;
     }
+
     .web-credit {
       position: absolute;
-      top: 20px;
+      top: 50px;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
@@ -205,6 +237,14 @@
 </head>
 <body>
 
+  <!-- Thanh điều hướng trên -->
+  <div class="top-navbar">
+    <button class="nav-button" onclick="history.back()">←</button>
+    <button class="nav-button" onclick="history.forward()">→</button>
+    <button class="nav-button" onclick="location.reload()">⟳</button>
+  </div>
+
+  <!-- Hiển thị Discord và phiên bản -->
   <div class="web-credit">
     Phiên bản 1.2.5 | Server Discord:
     <a href="https://discord.gg/w26VGWmMPb" target="_blank">
@@ -212,7 +252,11 @@
       Join
     </a>
   </div>
+
+  <!-- Hiển thị thời gian -->
   <div class="time-display" id="timeDisplay">Loading...</div>
+
+
 
   <!-- Gói danh sách thiết bị-->
     <div class="container-wrapper">
